@@ -1,0 +1,8 @@
+---
+- hosts: node2
+  become: true
+  tasks:
+    - name: deploy jar file
+      copy: 
+        src: /var/lib/jenkins/workspace/test/target/*.jar
+        dest: /home/node2/tomcat/apache-tomcat-9.0.73/webapps
